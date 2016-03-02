@@ -13,3 +13,9 @@ _khatu_
 2. `bundle`
 3. `bundle exec rake db:create db:migrate db:seed`
 4. `bundle exec rails server`
+
+## environment
+
+#### staging
+
+https://qhatu-dev.herokuapp.com/
