@@ -1,0 +1,6 @@
+es:
+  notice:
+    error: Ups, algo salió mal
+  items:
+    created: Item creado
+    create: Crear ítem

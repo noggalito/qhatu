@@ -7,8 +7,10 @@ RSpec.describe "items",
 
     fill_in "Titulo", with: "Some title"
 
-    click_button "Crear Item"
+    click_button I18n.t("items.create")
 
-    expect(page).to have_text("Success")
+    expect(page).to have_text(
+      I18n.t("items.created")
+    )
   end
 end

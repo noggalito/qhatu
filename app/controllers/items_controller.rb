@@ -20,10 +20,10 @@ class ItemsController < ApplicationController
     @item = Item.new(items_params)
     if @item.save
       redirect_to root_path,
-                  notice: 'Success'
+                  notice: I18n.t("items.created")
     else
       redirect_to new_item_path,
-                  error: 'Something went wrong'
+                  error: I18n.t("notice.error")
     end
   end
 
