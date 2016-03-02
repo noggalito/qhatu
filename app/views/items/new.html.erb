@@ -1,1 +1,23 @@
 <h1>Nuevo ítem</h1>
+
+<%= form_for @item do |form| %>
+  <div>
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo %>
+  </div>
+  <div>
+    <%= form.label :imagen %>
+    <%= form.text_field :imagen %>
+  </div>
+  <div>
+    <%= form.label :precio %>
+    <%= form.number_field :precio %>
+  </div>
+  <div>
+    <%= form.label :detalle %>
+    <%= form.text_area :detalle %>
+  </div>
+  <div>
+    <%= form.submit "Crear Item"%>
+  </div>
+<% end %>
