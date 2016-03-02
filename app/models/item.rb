@@ -12,4 +12,9 @@
 #
 
 class Item < ActiveRecord::Base
+  validates :titulo,
+            :imagen,
+            :precio,
+            :detalle,
+            presence: true
 end
