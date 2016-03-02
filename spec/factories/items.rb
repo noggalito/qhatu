@@ -13,6 +13,9 @@
 
 FactoryGirl.define do
   factory :item do
-    name "MyString"
+    sequence(:titulo) { |n| "item #{n}" }
+    precio { (rand*10).round(2) }
+    detalle { "description for #{titulo}" }
+    imagen "http://mcgindex.com/static/img/product-placeholder.png"
   end
 end

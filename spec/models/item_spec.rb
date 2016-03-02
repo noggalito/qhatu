@@ -14,13 +14,16 @@
 require 'rails_helper'
 
 RSpec.describe Item, type: :model do
+  describe "factory" do
+    let(:item) { build :item }
 
-  it "Can be instantiated" do
-    expect(Item.new).to be_an_instance_of(Item)
+    it "Can be instantiated" do
+      expect(item).to be_an_instance_of(Item)
+    end
+
+    it "Can be saved successfully" do
+      item.save
+      expect(item).to be_persisted
+    end
   end
-
-  it "Can be saved successfully" do
-    expect(Item.create).to be_persisted
-  end
-
 end
