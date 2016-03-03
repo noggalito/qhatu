@@ -11,13 +11,14 @@
 #  updated_at :datetime         not null
 #
 
-require 'rails_helper'
-
-RSpec.describe ItemsController, type: :controller do
-  describe "GET #new" do
-    it "returns http success" do
-      get :new
-      expect(response).to have_http_status(:success)
-    end
-  end
+class Item < ActiveRecord::Base
+  validates :titulo,
+            :imagen,
+            :precio,
+            :detalle,
+            presence: true
+  validates :precio,
+            numericality: {
+              greater_than: 0
+            }
 end
