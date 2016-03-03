@@ -17,4 +17,8 @@ class Item < ActiveRecord::Base
             :precio,
             :detalle,
             presence: true
+  validates :precio,
+            numericality: {
+              greater_than: 0
+            }
 end
