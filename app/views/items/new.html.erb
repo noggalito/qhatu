@@ -3,21 +3,21 @@
 <%= form_for @item do |form| %>
   <div>
     <%= form.label :titulo %>
-    <%= form.text_field :titulo %>
+    <%= form.text_field :titulo, required: true %>
   </div>
   <div>
     <%= form.label :imagen %>
-    <%= form.text_field :imagen %>
+    <%= form.text_field :imagen, required: true %>
   </div>
   <div>
     <%= form.label :precio %>
-    <%= form.number_field :precio %>
+    <%= form.number_field :precio, required: true %>
   </div>
   <div>
     <%= form.label :detalle %>
-    <%= form.text_area :detalle %>
+    <%= form.text_area :detalle, required: true %>
   </div>
   <div>
-    <%= form.submit "Crear Item"%>
+    <%= form.submit t("items.create") %>
   </div>
 <% end %>
