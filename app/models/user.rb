@@ -26,7 +26,6 @@
 #
 
 class User < ActiveRecord::Base
-
   has_many :items
 
   # Include default devise modules. Others available are:
@@ -37,6 +36,10 @@ class User < ActiveRecord::Base
 
   serialize :urls, JSON
   validates :first_name, presence: true
+
+  def to_s
+    username
+  end
 
   def self.find_or_create_by_omniauth(auth)
     User.where(
