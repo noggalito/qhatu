@@ -12,6 +12,11 @@
 #
 
 class ItemsController < ApplicationController
+
+  def index
+    @items = Item.all.order(:created_at).reverse
+  end
+
   def new
     @item = Item.new
   end

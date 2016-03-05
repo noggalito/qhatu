@@ -4,3 +4,5 @@ es:
   items:
     created: Item creado
     create: Crear ítem
+    price: Precio
+    date: Fecha de publicación
