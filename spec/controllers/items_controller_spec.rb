@@ -22,10 +22,14 @@ RSpec.describe ItemsController, type: :controller do
   end
 
   describe "GET #index" do
+    let!(:item) { create :item }
+    before { get :index }
+
     it "returns http success" do
-      create :item
-      get :index
       expect(response).to have_http_status(:success)
+    end
+
+    it "includes item" do
       expect(assigns(:items)).to include(item)
     end
   end
