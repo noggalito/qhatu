@@ -20,4 +20,17 @@ RSpec.describe ItemsController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe "GET #index" do
+    let!(:item) { create :item }
+    before { get :index }
+
+    it "returns http success" do
+      expect(response).to have_http_status(:success)
+    end
+
+    it "includes item" do
+      expect(assigns(:items)).to include(item)
+    end
+  end
 end

@@ -1,0 +1,18 @@
+<div>
+  <div>
+    <h2><%= item.titulo %></h2>
+    <div>
+      <%= image_tag item.imagen %>
+    <div>
+  </div>
+  <div>
+    <%= t("items.price")%>: <%= item.precio %>
+  </div>
+  <div>
+    <%= t("items.date")%>:
+    <time>
+      <%= item.created_at.localtime.strftime('%d/%m/%Y  %H:%M:%S') %>
+    </time>
+  </div>
+  <hr/>
+</div>
