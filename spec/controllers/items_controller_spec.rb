@@ -36,5 +36,12 @@ RSpec.describe ItemsController, type: :controller do
     it "includes item" do
       expect(assigns(:items)).to include(item)
     end
+
+    it "assigns @items with pagination" do
+      get :index
+      items = Item.page(1).per(10)
+      expect(assigns(:items).count).to eq(items.count)
+    end
+
   end
 end

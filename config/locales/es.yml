@@ -20,3 +20,10 @@ es:
     create: Crear ítem
     price: Precio
     date: Fecha de publicación
+  views:
+    pagination:
+      first: Primero
+      last: Último
+      previous: "&lt; Anterior"
+      next: "Siguiente &gt;"
+      truncate: "..."

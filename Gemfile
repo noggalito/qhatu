@@ -27,6 +27,9 @@ gem 'devise'
 gem 'database_cleaner', '~> 1.5', '>= 1.5.1'
 #gem to test
 gem 'shoulda-matchers', require: false
+# Pagination
+gem 'kaminari'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
