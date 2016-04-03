@@ -2,6 +2,10 @@ require "rails_helper"
 
 RSpec.describe "items",
                type: :feature do
+   let(:user) { create(:user) }
+
+   before { login_as user }
+
   describe "Create new item" do
     scenario "valid action" do
       visit new_item_path
