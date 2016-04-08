@@ -1,5 +1,6 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
+require "omniauth-twitter"
 Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
@@ -14,6 +15,9 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'no-repply@noggalito.com'
 
+  # config.omniauth :twitter, "QDXWRT2EMNk8M2LqKh9uBZQDI", "1Eb2p6zVqiAJPcihmtKxhjAldFb2RL0c74icdEGFRyYn3Lrv58"
+
+  config.omniauth :twitter, ENV["TWITTER_CLIENT_ID"], ENV["CLIENT_KEY"]
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

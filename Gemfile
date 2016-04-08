@@ -29,6 +29,10 @@ gem 'database_cleaner', '~> 1.5', '>= 1.5.1'
 gem 'shoulda-matchers', require: false
 # Pagination
 gem 'kaminari'
+#Installation OmniAuth
+gem "omniauth"
+#Installation middleware Twitter
+gem "omniauth-twitter"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
