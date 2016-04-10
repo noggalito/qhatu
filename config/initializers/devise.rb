@@ -13,11 +13,11 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'no-repply@noggalito.com'
+  config.mailer_sender = 'no-reply@noggalito.com'
 
-  # config.omniauth :twitter, "QDXWRT2EMNk8M2LqKh9uBZQDI", "1Eb2p6zVqiAJPcihmtKxhjAldFb2RL0c74icdEGFRyYn3Lrv58"
-
-  config.omniauth :twitter, ENV["TWITTER_CLIENT_ID"], ENV["CLIENT_KEY"]
+  config.omniauth :twitter,
+                  Rails.application.secrets.twitter_client_id,
+                  Rails.application.secrets.twitter_client_key
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
