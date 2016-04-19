@@ -42,4 +42,11 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of :password }
   end
 
+  describe "Relations" do
+    it "should have many items" do
+      t = User.reflect_on_association(:items)
+      expect(t.macro).to eq(:has_many)
+    end
+  end
+
 end

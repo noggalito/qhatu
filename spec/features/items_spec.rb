@@ -39,8 +39,8 @@ RSpec.describe "items",
     item = create :item
     visit items_path
 
-    expect(page).to have_text(
-      item.precio
-    )
+    expect(page).to have_text(item.precio)
+    expect(page).to have_text(item.user.first_name)
+
   end
 end
