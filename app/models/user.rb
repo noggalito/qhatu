@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, omniauth_providers: [:twitter]
+         :omniauthable, omniauth_providers: [:twitter, :facebook]
 
   serialize :urls, JSON
   validates :first_name, presence: true
