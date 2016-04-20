@@ -23,9 +23,7 @@ es:
     create: Crear ítem
     price: Precio
     date: Fecha de publicación
-    author:
-      label: Autor
-      default: Anónimo
+    author: Autor
   views:
     pagination:
       first: Primero

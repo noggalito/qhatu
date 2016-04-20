@@ -15,12 +15,7 @@
     </time>
   </div>
   <div>
-    <%= t("items.author.label") %>:
-    <% if item.user.respond_to?(:first_name) %>
-      <%= item.user.first_name %>
-    <% else %>
-      <%= t("items.author.default") %>
-    <% end %>
+    <%= t("items.author") %>: <%= item.user.first_name %>
   </div>
   <hr/>
 </div>

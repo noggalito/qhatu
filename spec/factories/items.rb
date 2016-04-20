@@ -18,6 +18,6 @@ FactoryGirl.define do
     precio { (rand*10).round(2) }
     detalle { "description for #{titulo}" }
     imagen "http://mcgindex.com/static/img/product-placeholder.png"
-    association :user, factory: :user
+    association :user
   end
 end
