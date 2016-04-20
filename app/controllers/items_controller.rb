@@ -9,6 +9,7 @@
 #  detalle    :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :integer
 #
 
 class ItemsController < ApplicationController
@@ -23,6 +24,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(items_params)
+    @item.user = current_user
     if @item.save
       redirect_to root_path,
                   notice: I18n.t("items.created")

@@ -9,6 +9,7 @@
 #  detalle    :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :integer
 #
 
 FactoryGirl.define do
@@ -17,5 +18,6 @@ FactoryGirl.define do
     precio { (rand*10).round(2) }
     detalle { "description for #{titulo}" }
     imagen "http://mcgindex.com/static/img/product-placeholder.png"
+    association :user
   end
 end

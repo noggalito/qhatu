@@ -11,7 +11,10 @@ es:
           attributes:
             email:
               blank: no puede estar en blanco
+              taken: ya ha sido registrado.
             password:
+              blank: no puede estar en blanco
+            first_name:
               blank: no puede estar en blanco
   notice:
     error: Ups, algo salió mal
@@ -20,6 +23,7 @@ es:
     create: Crear ítem
     price: Precio
     date: Fecha de publicación
+    author: Autor
   views:
     pagination:
       first: Primero

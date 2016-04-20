@@ -14,5 +14,8 @@
       <%= item.created_at.localtime.strftime('%d/%m/%Y  %H:%M:%S') %>
     </time>
   </div>
+  <div>
+    <%= t("items.author") %>: <%= item.user.first_name %>
+  </div>
   <hr/>
 </div>
