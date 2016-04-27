@@ -1,23 +1,27 @@
-<h1>Nuevo ítem</h1>
+<div class="ui centered grid container">
+  <div class="sixteen wide tablet eight wide computer column">
+    <h1>Publicar</h1>
 
-<%= form_for @item do |form| %>
-  <div>
-    <%= form.label :titulo %>
-    <%= form.text_field :titulo, required: true %>
+    <%= form_for @item, html: { class: "ui form" } do |form| %>
+      <div class="field">
+        <%= form.label :titulo %>
+        <%= form.text_field :titulo, required: true %>
+      </div>
+      <div class="field">
+        <%= form.label :imagen %>
+        <%= form.text_field :imagen, required: true %>
+      </div>
+      <div class="field">
+        <%= form.label :precio %>
+        <%= form.number_field :precio, required: true %>
+      </div>
+      <div class="field">
+        <%= form.label :detalle %>
+        <%= form.text_area :detalle, required: true %>
+      </div>
+      <div>
+        <%= form.submit t("items.create"), class: "ui button primary" %>
+      </div>
+    <% end %>
   </div>
-  <div>
-    <%= form.label :imagen %>
-    <%= form.text_field :imagen, required: true %>
-  </div>
-  <div>
-    <%= form.label :precio %>
-    <%= form.number_field :precio, required: true %>
-  </div>
-  <div>
-    <%= form.label :detalle %>
-    <%= form.text_area :detalle, required: true %>
-  </div>
-  <div>
-    <%= form.submit t("items.create") %>
-  </div>
-<% end %>
+</div>
