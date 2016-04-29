@@ -18,6 +18,10 @@ Devise.setup do |config|
   config.omniauth :twitter,
                   Rails.application.secrets.twitter_client_id,
                   Rails.application.secrets.twitter_client_key
+
+  config.omniauth :facebook,
+                  Rails.application.secrets.facebook_client_id,
+                  Rails.application.secrets.facebook_client_key
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
