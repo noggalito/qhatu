@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
 
   def to_s
-    username
+    username.present? ? username : first_name
   end
 
   def self.find_or_create_by_omniauth(auth)
