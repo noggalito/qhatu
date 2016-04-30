@@ -17,8 +17,7 @@
 #  updated_at             :datetime         not null
 #  provider               :string
 #  uid                    :string
-#  first_name             :string
-#  last_name              :string
+#  name                   :string
 #  username               :string
 #  image                  :string
 #  location               :string
@@ -27,7 +26,8 @@
 
 FactoryGirl.define do
   factory :user do
-    sequence(:first_name) { |n| "User #{n}" }
+    sequence(:name) { |n| "User #{n}" }
+    sequence(:username) { |n| "username-#{n}" }
     sequence(:email) { |n| "user-#{n}@qhatu.org" }
     sequence(:password) { |n| "user-password-#{n}" }
     password_confirmation { password }

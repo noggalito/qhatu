@@ -17,8 +17,7 @@
 #  updated_at             :datetime         not null
 #  provider               :string
 #  uid                    :string
-#  first_name             :string
-#  last_name              :string
+#  name                   :string
 #  username               :string
 #  image                  :string
 #  location               :string

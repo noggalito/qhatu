@@ -3,12 +3,12 @@
     <%= link_to root_path, class: "item" do %>
       <i class="home icon"></i> Inicio
     <% end %>
-    
+
     <% if user_signed_in? %>
       <%= link_to new_item_path, class: "item" do %>
         <i class="share icon"></i> Publicar
       <% end %>
-      
+
       <a class="item">
         <i class="heart icon"></i> Favoritos
       </a>
@@ -16,16 +16,18 @@
         <i class="mail icon"></i> Mensajes
       </a>
     <% end %>
-    
+
     <div class="right item">
       <div class="ui input"><input type="text" placeholder="Buscar..."></div>
-      
+
       <% if user_signed_in? %>
         <div class="ui simple dropdown item">
         <%= current_user %>
         <i class="dropdown icon"></i>
         <div class="menu">
-          <a class="item"><i class="edit icon"></i> Editar Perfil</a>
+          <%= link_to edit_user_registration_path, class: "item" do %>
+            <i i class="edit icon"></i> Editar Perfil
+          <% end %>
           <%= link_to destroy_user_session_path, class: "item", method: :delete do %>
             <i class="power icon"></i> Cerrar sesión
           <% end %>
@@ -34,7 +36,7 @@
         <%= link_to 'Login', new_user_session_path, class: "item"  %>
       <% end %>
 
-        
+
     </div>
     </div>
   </div>

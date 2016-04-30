@@ -17,8 +17,7 @@
 #  updated_at             :datetime         not null
 #  provider               :string
 #  uid                    :string
-#  first_name             :string
-#  last_name              :string
+#  name                   :string
 #  username               :string
 #  image                  :string
 #  location               :string
@@ -35,10 +34,12 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:twitter, :facebook]
 
   serialize :urls, JSON
-  validates :first_name, presence: true
+  validates :name, presence: true
+  validates :username,  presence: true,
+                        uniqueness: true
 
   def to_s
-    username.present? ? username : first_name
+    username.present? ? username : name
   end
 
   def self.find_or_create_by_omniauth(auth)
@@ -49,7 +50,7 @@ class User < ActiveRecord::Base
       user.assign_attributes(
         email: auth.info.email,
         image: auth.info.image,
-        first_name: auth.info.name,
+        name: auth.info.name,
         username: auth.info.nickname,
         location: auth.info.location,
         urls: auth.info.urls,
